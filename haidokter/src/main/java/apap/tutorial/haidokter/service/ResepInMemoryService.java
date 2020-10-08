@@ -31,9 +31,23 @@ public class ResepInMemoryService implements ResepService {
         ResepModel resep = new ResepModel();
         for (ResepModel s : listResep){
             if(s.getNoResep().equals(noResep)){
-                resep = s;
+                return s;
             }
         }
+        return null;
+    }
+    //    ==========LATIHAN=========
+
+
+    @Override
+    public ResepModel updateCatatanResep(ResepModel resep, String catatan) {
+        resep.setCatatan(catatan);
+        return resep;
+    }
+
+    @Override
+    public ResepModel deleteResep(ResepModel resep) {
+        listResep.remove(resep);
         return resep;
     }
 
