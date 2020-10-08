@@ -55,3 +55,42 @@
 ### What I did not understand
 - Saya masih kurang tahu apa saja jenis jenis file yang ada terkait penggunaan git ini, seperti docs, feat.
   Mungkin saya akan dapat memahaminya lebih lanjut jika lebih banyak searching.
+  
+  
+  
+## Tutorial 2
+### What I have learned today
+1. Cobalah untuk menambahkan sebuah resep dengan mengakses link berikut:
+http://localhost:8080/resep/add?noResep=1&namaDokter=Papa%20APAP&namaPasien=Quanta%20F
+asilkom&catatan=Semangat
+Apa yang terjadi? Jelaskan mengapa hal tersebut dapat terjadi
+Hal yang terjadi adalah munculnya whitelabel error. Hali ni dapat terjadi karena view add-resep belum kita buat
+                                                                                                                                                                                      
+2. Menurut kamu anotasi @Autowired pada class Controller tersebut merupakan implementasi dari konsep apa? 
+Dan jelaskan secara singkat cara kerja @Autowired tersebut dalam konteks service dan controller yang telah kamu buat  
+
+@Autowired merupakanfitur component-scan yang disediakan oleh Spring Framework. Anotasi ini mengimplementasi Inversion of Control 
+tugasnya untuk melihat isi package, lalu
+mengecek setiap class yang memiliki anotasi :
+-@Repository
+-@Service
+-@Controller
+-@Component
+Setelah ditemukan, maka akan dilakukan inisiasi atau inject semua dependency yang dibutuhkan.
+@Autowired dalam konteks ini menambahkan variabel dari ResepService ke dalam Controller
+
+3. Cobalah untuk menambahkan sebuah resep dengan mengakses link berikut:
+http://localhost:8080/resep/add?noResep=1&namaDokter=Papa%20APAP&namaPasien=Quanta%20F
+asilkom Apa yang terjadi? Jelaskan mengapa hal tersebut dapat terjadi.
+Akan ada whitelabel error lagi, karena parameter dari variabel 'catatan' tidak ada isiniya.
+
+5: Tambahkan 1 contoh resep lainnya sesukamu. Lalu cobalah untuk mengakses http://localhost:8080/resep/viewall , 
+apa yang akan ditampilkan? Sertakan juga bukti screenshotmu.
+Link http://localhost:8080/resep/add?noResep=10052000&namaDokter=Mama%20AMAM&namaPasien=Muhammad%20Fiqri%20Adrian&catatan=AyoAyoAyo
+
+Link Gambar : https://drive.google.com/file/d/1v4zggm_SqZtuDyghQpJ0AgV2llNeKkE-/view?usp=sharing
+
+ 
+### What I did not understand
+- Masih banyak error yang saya temui tadi, namun setelah mengetik ulang saya dapat mengatasinya. Sebelumnya saya tidak mengetahui 
+kenapa error tersebut muncul, kemungkinan karena adanya typo.
