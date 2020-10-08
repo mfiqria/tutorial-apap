@@ -80,4 +80,55 @@ public class ResepController {
         //  Return view template yang ingin digunakan
         return "view-resep";
     }
+
+    //  ============Latihan============
+    @RequestMapping("/resep/update/no-resep/{noResep}/catatan/{catatan}")
+    public String updateResep(
+            @PathVariable("noResep") String noResep,
+            @PathVariable("catatan") String catatan,
+            Model model){
+
+
+        //  Cek apakah terdapat nomor resep yang diminta
+        if(resepService.getResepByNomorResep(noResep) !=null) {
+            //  Mendapatkan ResepModel sesuai nomor resep
+            ResepModel resep = resepService.getResepByNomorResep(noResep);
+
+            //  Melakukan pemanggilan service update catatan
+            ResepModel resepUpdated = resepService.updateCatatanResep(resep, catatan);
+
+            //  Add variabel ResepModel ke 'resep' untuk dirender pada thymeleaf
+            model.addAttribute("resep", resepUpdated);
+
+            //  Return view template yang ingin digunakan
+            return "update-resep";
+        }
+        else{
+            return "update-resep-error";
+        }
+    }
+
+    @RequestMapping("/resep/delete/no-resep/{noResep}")
+    public String deleteResep(
+            @PathVariable("noResep") String noResep,
+            Model model){
+
+        //  Cek apakah terdapat nomor resep yang diminta
+        if(resepService.getResepByNomorResep(noResep) !=null) {
+            //  Mendapatkan ResepModel sesuai nomor resep
+            ResepModel resep = resepService.getResepByNomorResep(noResep);
+
+            //  Melakukan pemanggilan service delete
+            ResepModel resepDeleted = resepService.deleteResep(resep);
+
+            //  Add variabel ResepModel ke 'resep' untuk dirender pada thymeleaf
+            model.addAttribute("resep", resepDeleted);
+
+            //  Return view template yang ingin digunakan
+            return "delete-resep";
+        }
+        else{
+            return "delete-resep-error";
+        }
+    }
 }

@@ -13,5 +13,11 @@ public interface ResepService {
     //  Method untuk mendapatkan data sebuah resep berdasarkan nomor resep
     ResepModel getResepByNomorResep(String noResep);
 
+    //===========Latihan=========
 
+    //     Method untuk update catatan
+    ResepModel updateCatatanResep(ResepModel noResep, String catatan);
+
+    //     Method untuk delete resep
+    ResepModel deleteResep(ResepModel noResep);
 }
