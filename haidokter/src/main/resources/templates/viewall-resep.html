@@ -5,8 +5,9 @@
     <title>View all resep</title>
 </head>
 <body>
+    <a th:href="@{/}">Home</a>
     <h2>Daftar Seluruh Resep</h2>
-    <div th:each="resep: ${listResep}">
+    <div th:each="resep: ${listResepReverse}">
         <h3 th:text="'Nomor Resep: '+ ${resep.noResep}"></h3>
         <h3 th:text="'Nama Dokter: '+ ${resep.namaDokter}"></h3>
         <h3 th:text="'Nama Pasien: '+ ${resep.namaPasien}"></h3>

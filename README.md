@@ -94,3 +94,29 @@ Link Gambar : https://drive.google.com/file/d/1v4zggm_SqZtuDyghQpJ0AgV2llNeKkE-/
 ### What I did not understand
 - Masih banyak error yang saya temui tadi, namun setelah mengetik ulang saya dapat mengatasinya. Sebelumnya saya tidak mengetahui 
 kenapa error tersebut muncul, kemungkinan karena adanya typo.
+
+
+## Tutorial 3
+### What I have learned today
+1. Pada class ResepDb , terdapat method findByNoResep , apakah kegunaan dari method tersebut?
+    findByNoResep adalah query creation method yang berasal dari  resepModel. Method ini berguna untuk menyaring Key dari table resep yang
+    sudah dibuat.
+2. Pada class ResepController , jelaskan perbedaan method addResepFormPage dan addResepSubmit ?
+    addResepFormPage adalah method yang digunakan ketika user baru hendak membuat suatu resep. Method ini menggunakan request method
+    bertipe Get yang digunakan untuk mendapatkan data data yang akan diisikan oleh user. Sedangkan addResepSubmit adalah method yang
+    digunakan ketika user akan men-submit data resep yang telah dimasukkan form kedalam database resep, method ini menggunakan 
+    request method Post.
+3. Jelaskan kegunaan dari JPA Repository !
+    JPA repository adalah standar untuk menggunakan object java pada relational database.
+4. Sebutkan dan jelaskan di bagian kode mana sebuah relasi antara ResepModel dan ObatModel dibuat?
+    ResepModel dan ObatModel 'menjalin' relasi pada package model. Disini terdapat hubungan karena pada ObatModel terdapat accessor dan mutator
+    untuk memanggil resepModel. Selain itu hubungan keduanya juga terdapat pada proses update obat. Update obat membutuhkan ResepModel agar ketika
+    melakukan update noResep tidak bernilai null.
+5. Jelaskan kegunaan FetchType.LAZY, CascadeType.ALL , dan FetchType.EAGER !
+    FetchType.LAZY -->  Hibernate tidak men-load semua collecton object ( child ) saat object parent di-fetch. Collection object (child) hanya 
+    di-load jika secara eksplisit dibutuhkan via getter method. Default fetching (@OneToMany, @ManyToMany)
+    FetchType.EAGER --> Hibernate men-load semua collection object ( child ) sesaat setelah object parent di-fetch. Default fetching (@OneToOne, @ManyToOne.)
+    CascadeType.ALL --> Semua operasi cascade akan diterapkan pada entitas terkait, Operasi cascade yang Terkait (DETACH, MERGE, PERSIST, REFRESH, REMOVE).
+ 
+### What I did not understand
+- Saya masih harus banyak belajar mengenai proses update dan delete pada database ini, karena masih banyak mengalami error.
