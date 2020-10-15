@@ -3,17 +3,11 @@ package apap.tutorial.haidokter.service;
 import apap.tutorial.haidokter.model.ResepModel;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @Service
 public class ResepInMemoryService implements ResepService {
     private List<ResepModel> listResep;
-
-    //  Constructor
-    public ResepInMemoryService(){
-        listResep = new ArrayList<>();
-    }
 
     @Override
     public void addResep(ResepModel resep) {
@@ -27,13 +21,38 @@ public class ResepInMemoryService implements ResepService {
     }
 
     @Override
-    public ResepModel getResepByNomorResep(String noResep){
+    public List<ResepModel> getResepListReverse(){
+        return listResep;
+    }
+
+    @Override
+    public ResepModel getResepByNomorResep(Long noResep){
         ResepModel resep = new ResepModel();
         for (ResepModel s : listResep){
             if(s.getNoResep().equals(noResep)){
-                resep = s;
+                return s;
             }
         }
+        return null;
+    }
+
+    @Override
+    public ResepModel updateResep(ResepModel resepModel){
+        return null;
+    }
+
+    //    ==========LATIHAN=========
+
+
+    @Override
+    public ResepModel updateCatatanResep(ResepModel resep, String catatan) {
+        resep.setCatatan(catatan);
+        return resep;
+    }
+
+    @Override
+    public ResepModel deleteResep(ResepModel resep) {
+        listResep.remove(resep);
         return resep;
     }
 
