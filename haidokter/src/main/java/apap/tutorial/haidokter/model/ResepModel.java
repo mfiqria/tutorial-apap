@@ -71,5 +71,6 @@ public class ResepModel implements Serializable {
     public void setCatatan(String catatan) {
         this.catatan = catatan;
     }
+
 }
 

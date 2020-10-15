@@ -47,9 +47,15 @@ public class ResepController {
             @PathVariable Long noResep,
             Model model
     ) {
-        ResepModel resep = resepService.getResepByNomorResep(noResep);
-        model.addAttribute("resep", resep);
-        return "form-update-resep";
+        if (noResep != null) {
+            ResepModel resep = resepService.getResepByNomorResep(noResep);
+            model.addAttribute("resep", resep);
+
+            return "form-update-resep";
+        }
+        model.addAttribute("msg", "Nomor Resep Tidak Ditemukan atau Nomor Resep Tidak Ada!");
+
+        return "error";
     }
     @PostMapping("/resep/change")
     private String changeResepFormSubmit(
@@ -66,14 +72,19 @@ public class ResepController {
             @RequestParam(value = "noResep") Long noResep,
             Model model
     ) {
-        ResepModel resep = resepService.getResepByNomorResep(noResep);
-        List<ObatModel> listObat = resep.getListObat();
+        if (noResep != null) {
+            ResepModel resep = resepService.getResepByNomorResep(noResep);
+            List<ObatModel> listObat = resep.getListObat();
 
-        model.addAttribute("resep", resep);
-        model.addAttribute("listObat", listObat);
+            model.addAttribute("resep", resep);
+            model.addAttribute("listObat", listObat);
 
-        return "view-resep";
+            return "view-resep";
+        }
+
+        return "error";
     }
+
     @RequestMapping("/resep/viewall")
     public String listResep(Model model){
         //  Mendapatkan semua ResepModel
@@ -90,10 +101,10 @@ public class ResepController {
     @GetMapping("/resep/delete/{noResep}")
     public String deleteResep(
             @PathVariable("noResep") Long noResep,
-            Model model){
+            Model model) {
 
         //  Cek apakah terdapat nomor resep yang diminta
-        if(resepService.getResepByNomorResep(noResep) !=null) {
+        if (resepService.getResepByNomorResep(noResep) != null) {
             //  Mendapatkan ResepModel sesuai nomor resep
             ResepModel resep = resepService.getResepByNomorResep(noResep);
 
@@ -104,15 +115,15 @@ public class ResepController {
             model.addAttribute("resep", resepDeleted);
 
             //  Return view template yang ingin digunakan
-            if(resepDeleted != null){
+            if (resepDeleted != null) {
                 return "delete-resep";
-            }
-            else{
+            } else {
                 return "delete-resep-error";
             }
-        }
-        else{
+        } else {
             return "delete-resep-error";
         }
     }
 }
+
+
