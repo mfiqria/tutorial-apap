@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://thymeleaf.org">
 <head>
-    <title>Delete Resep</title>
+    <title>Delete Obat</title>
 </head>
 <body>
-<h3>Resep gagal dihapus karena memiliki obat</h3>
-
+<h3 th:text="'Id Obat '+ ${obat.id} +' telah berhasil dihapus'"></h3>
 <a href="/resep/viewall">Kembali</a>
 </body>
 </html>
