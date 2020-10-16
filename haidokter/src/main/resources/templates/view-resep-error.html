@@ -1,10 +1,16 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://thymeleaf.org">
-<head>
-    <title>View Resep</title>
-</head>
-<body>
-<h3>Telah terjadi error, pastikan nomor resep telah tersimpan didalam sistem terlebih dahulu!</h3>
-<a href="/resep/viewall">Kembali</a>
-</body>
+    <head>
+        <title>View Resep</title>
+        <object th:include="fragments/fragment :: css" th:remove="tag"></object>
+        <object th:include="fragments/fragment :: js" th:remove="tag"></object>
+    </head>
+    <body>
+        <nav th:replace="fragments/fragment :: navbar"></nav>
+        <div class="container-fluid">
+            <h3>Telah terjadi error, pastikan nomor resep telah tersimpan didalam sistem terlebih dahulu!</h3>
+            <a href="/resep/viewall">Kembali</a>
+        </div>
+
+    </body>
 </html>
