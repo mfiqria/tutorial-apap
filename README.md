@@ -140,6 +140,17 @@ Asterisk syntax (*) mengevaluasi ekspresi pada objek yang dipilih sedangkan doll
 sedangkan $ digunakan untuk mengoperasikan keseluruhan variable.
 
 4. Bagaimana kamu menyelesaikan latihan nomor 3?
+Latihan no 3 saya selesaikan dengan menambahkan suatu tag bold pada file fragment.html. Tag bold ini terletak didalam tag navbar, dan di styling
+rata kanan.
+```
+    <b th:text="${title}" style="text-align:right;"></b>
+```
+Lalu pada setiap page yang akan memanggil fragment ini saya tambahkan beberapa variable
+```
+    <nav th:replace="fragments/fragment :: navbar(title = '<Judul title>')"></nav>
+```
+Judul title dapat kita sesuaikan dengan title terkait
+
 
 ### What I did not understand
 - Saya masih harus banyak belajar mengenai flexible layout dan juga hal hal terkait latihan no 4
