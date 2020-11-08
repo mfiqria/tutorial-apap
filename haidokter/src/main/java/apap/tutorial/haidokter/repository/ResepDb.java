@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Repository
-public interface ResepDb extends JpaRepository<ResepModel, Long>{
+public interface ResepDb extends JpaRepository<ResepModel, Long> {
     Optional<ResepModel> findByNoResep(Long noResep);
 
     List<ResepModel> findAllByOrderByNoResepDesc();
