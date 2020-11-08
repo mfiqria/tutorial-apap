@@ -85,6 +85,24 @@ public class ResepController {
         return "error";
     }
 
+    @GetMapping("/resep/view/{noResep}")
+    private String viewResepDariHome(
+            @PathVariable Long noResep,
+            Model model
+    ) {
+        if (noResep != null) {
+            ResepModel resep = resepService.getResepByNomorResep(noResep);
+            List<ObatModel> listObat = resep.getListObat();
+
+            model.addAttribute("resep", resep);
+            model.addAttribute("listObat", listObat);
+
+            return "view-resep";
+        }
+
+        return "error";
+    }
+
     @RequestMapping("/resep/viewall")
     public String listResep(Model model){
         //  Mendapatkan semua ResepModel
@@ -124,6 +142,12 @@ public class ResepController {
             return "delete-resep-error";
         }
     }
+
+//    @GetMapping("/obat/add-multiple/{noResep}")
+//    private String addMultipleResepFormPage(
+//            @PathVariable Long noResep,
+//            Model model
+//    ) {
+//
+//    }
 }
-
-

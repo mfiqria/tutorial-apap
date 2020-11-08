@@ -120,3 +120,37 @@ kenapa error tersebut muncul, kemungkinan karena adanya typo.
  
 ### What I did not understand
 - Saya masih harus banyak belajar mengenai proses update dan delete pada database ini, karena masih banyak mengalami error.
+
+
+## Tutorial 4
+### What I have learned today
+1. Jelaskan perbedaan th:include dan th:replace!
+th:insert dan th:replace sama sama berguna untuk fragment inclusion perbedaannya adalah 
+pada th:insert akan memasukkan fragment yang diinginkan ke dalam host tag dan langsung berperan sebagai bodynya. 
+Sedangkan th:replace akan mengganti host tag dengan fragment yang kita inginkan
+
+2. Jelaskan apa fungsi dari th:object!
+th:object adalah fitur local variable definition pada thymeleaf. 
+th:object digunakan untuk menentukan objek yang akan dihubungkan dengan data formulir yang dikirimkan. 
+Penggunaannya bisa dengan menggunakan asterisk syntax (*) pada objek yang diinginkan.
+
+3. Jelaskan perbedaan dari * dan $ pada saat penggunaan th:object! Kapan harus dipakai?
+Asterisk syntax (*) mengevaluasi ekspresi pada objek yang dipilih sedangkan dollar syntax ($) mengevaluasi ekpresi pada variable.
+* akan lebih baik digunakan ketika kita hanya ingin memilih beberapa object yang ada, 
+sedangkan $ digunakan untuk mengoperasikan keseluruhan variable.
+
+4. Bagaimana kamu menyelesaikan latihan nomor 3?
+Latihan no 3 saya selesaikan dengan menambahkan suatu tag bold pada file fragment.html. Tag bold ini terletak didalam tag navbar, dan di styling
+rata kanan.
+```
+    <b th:text="${title}" style="text-align:right;"></b>
+```
+Lalu pada setiap page yang akan memanggil fragment ini saya tambahkan beberapa variable
+```
+    <nav th:replace="fragments/fragment :: navbar(title = '<Judul title>')"></nav>
+```
+Judul title dapat kita sesuaikan dengan title terkait
+
+
+### What I did not understand
+- Saya masih harus banyak belajar mengenai flexible layout dan juga hal hal terkait latihan no 4
