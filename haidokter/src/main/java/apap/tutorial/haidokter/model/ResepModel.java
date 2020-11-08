@@ -44,14 +44,6 @@ public class ResepModel implements Serializable {
         return namaDokter;
     }
 
-    public List<ObatModel> getListObat() {
-        return listObat;
-    }
-
-    public void setListObat(List<ObatModel> listObat) {
-        this.listObat = listObat;
-    }
-
     public void setNamaDokter(String namaDokter) {
         this.namaDokter = namaDokter;
     }
@@ -72,5 +64,11 @@ public class ResepModel implements Serializable {
         this.catatan = catatan;
     }
 
-}
+    public List<ObatModel> getListObat() {
+        return listObat;
+    }
 
+    public void setListObat(List<ObatModel> listObat) {
+        this.listObat = listObat;
+    }
+}

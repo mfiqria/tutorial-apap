@@ -1,7 +1,6 @@
 package apap.tutorial.haidokter.service;
 
 import apap.tutorial.haidokter.model.ObatModel;
-import apap.tutorial.haidokter.model.ResepModel;
 import apap.tutorial.haidokter.repository.ObatDb;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -19,18 +18,19 @@ public class ObatServiceImpl implements ObatService {
     }
 
     @Override
-    public ObatModel getObatByIdObat(Long id){ return obatDb.findById(id).get();    }
+    public ObatModel getObatById(Long idObat) {
+        return obatDb.findObatModelById(idObat);
+    }
 
     @Override
-    public ObatModel updateObat(ObatModel obat){
-
+    public ObatModel changeObat(ObatModel obat) {
         obatDb.save(obat);
+
         return obat;
     }
 
     @Override
-    public ObatModel deleteObat(ObatModel obat){
-        obatDb.delete(obat);
-        return obat;
+    public void deleteObatById(Long idObat) {
+        obatDb.deleteById(idObat);
     }
 }
