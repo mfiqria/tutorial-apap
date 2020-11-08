@@ -1,18 +1,53 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://thymeleaf.org">
-<head>
-    <meta charset="UTF-8">
-    <title>View all resep</title>
-</head>
-<body>
-    <a th:href="@{/}">Home</a>
-    <h2>Daftar Seluruh Resep</h2>
-    <div th:each="resep: ${listResepReverse}">
-        <h3 th:text="'Nomor Resep: '+ ${resep.noResep}"></h3>
-        <h3 th:text="'Nama Dokter: '+ ${resep.namaDokter}"></h3>
-        <h3 th:text="'Nama Pasien: '+ ${resep.namaPasien}"></h3>
-        <h3 th:text="'Catatan: '+ ${resep.catatan}"></h3>
-        <hr>
-    </div>
-</body>
+    <head>
+        <meta charset="UTF-8">
+        <title>View all resep</title>
+        <object th:include="fragments/fragment :: css" th:remove="tag"></object>
+        <object th:include="fragments/fragment :: js" th:remove="tag"></object>
+    </head>
+    <body>
+        <nav th:replace="fragments/fragment :: navbar(title = 'View All Resep')"></nav>
+        <div class="container-fluid">
+            <div class="card">
+                <div class="card-header">Daftar Seluruh Resep</div>
+                <div class="card-body">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>No</th>
+                                <th>Nomor Resep</th>
+                                <th>Nama Dokter</th>
+                                <th>Nama Pasien</th>
+                                <th>Catatan</th>
+                                <th></th>
+                                <th>Aksi</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr
+                                th:each="resep, iterationStatus : ${listResepReverse}"
+                                th:style="${iterationStatus.odd} ? 'font-weight:bold;'"
+                            >
+                                <td th:text="${iterationStatus.count}"></td>
+                                <td th:text="${resep.noResep}"></td>
+                                <td th:text="${resep.namaDokter}"></td>
+                                <td th:text="${resep.namaPasien}"></td>
+                                <td th:text="${resep.catatan}"></td>
+                                <td>
+                                    <a th:href="@{/resep/view/} + ${resep.noResep}" class="btn btn-primary">Lihat Resep</a></td>
+                                </td>
+                                <td>
+                                    <a th:href="@{/resep/change/} + ${resep.noResep}" class="btn btn-success">Change Resep</a></td>
+                                </td>
+                                <td>
+                                    <a th:href="@{/resep/delete/} + ${resep.noResep}" class="btn btn-danger">Delete Resep</a></td>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </body>
 </html>

@@ -1,15 +1,24 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://thymeleaf.org">
-<head>
-    <title>Update Obat</title>
-</head>
-<body>
-<h1>Obat telah berhasil diupdate!</h1>
-<h2>Informasi Obat</h2>
-<h3 th:text="'ID Obat: '+ ${obat.id}"></h3>
-<h3 th:text="'Nama Obat: '+ ${obat.nama}"></h3>
-<h3 th:text="'Bentuk: '+ ${obat.bentuk}"></h3>
-<h3 th:text="'Kuantitas: '+ ${obat.kuantitas}"></h3>
-<a href="/resep/viewall">Kembali</a>
-</body>
+    <head>
+        <title>Update Obat</title>
+        <object th:include="fragments/fragment :: css" th:remove="tag"></object>
+        <object th:include="fragments/fragment :: js" th:remove="tag"></object>
+    </head>
+    <body>
+        <nav th:replace="fragments/fragment :: navbar(title = 'Change Obat')"></nav>
+        <div class="container-fluid">
+            <div class="card">
+                <h1>Obat telah berhasil diupdate!</h1>
+                <div class="card-header">Informasi Obat</div>
+                <div class="card-body">
+                <h3 th:text="'ID Obat: '+ ${obat.id}"></h3>
+                <h3 th:text="'Nama Obat: '+ ${obat.nama}"></h3>
+                <h3 th:text="'Bentuk: '+ ${obat.bentuk}"></h3>
+                <h3 th:text="'Kuantitas: '+ ${obat.kuantitas}"></h3>
+                <a href="/resep/viewall">Kembali</a>
+                </div>
+            </div>
+        </div>
+    </body>
 </html>
