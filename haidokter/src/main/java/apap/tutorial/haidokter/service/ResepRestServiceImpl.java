@@ -74,11 +74,11 @@ public class ResepRestServiceImpl implements ResepRestService {
     public Mono<String> getStatus(Long noResep){
         return this.webClient.get().uri("/rest/resep/" +noResep+ "/status").retrieve().bodyToMono(String.class);
     }
-
+    
     @Override
     public Mono<ResepDetail> postStatus() {
         MultiValueMap<String, String> data = new LinkedMultiValueMap<>();
-        data.add("namaDokter", "Dr. APAP");
+        data.add("namaDokter", "Dr.APAP");
         data.add("namaPasien", "Dede APAP");
         return this.webClient.post().uri("/rest/resep/full")
                 .syncBody(data)
