@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.Optional;
+
 @Service
 @Transactional
 public class ObatServiceImpl implements ObatService {
@@ -18,7 +20,7 @@ public class ObatServiceImpl implements ObatService {
     }
 
     @Override
-    public ObatModel getObatById(Long idObat) {
+    public Optional<ObatModel> getObatById(Long idObat) {
         return obatDb.findObatModelById(idObat);
     }
 

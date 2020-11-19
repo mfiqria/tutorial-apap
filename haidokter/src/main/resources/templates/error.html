@@ -1,14 +1,19 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://thymeleaf.org">
-<head>
-    <meta charset="UTF-8">
-    <title>Error</title>
-</head>
-<body>
-<h3>Telah terjadi error!</h3>
-<h4 style="color: darkred" th:text="${msg}"></h4>
-<h3>Segala proses dibatalkan!</h3>
-
-<a th:href="@{/}">Home</a>
-</body>
+    <head>
+        <meta charset="UTF-8">
+        <title>Error</title>
+    </head>
+    <body>
+    <div class="container-fluid">
+        <div class="card">
+            <div class="card-header">Error</div>
+            <div class="card-body">
+                <h3>Telah terjadi error!</h3>
+                <h4 style="color: darkred" th:text="${msg}"></h4>
+                <h3>Segala proses dibatalkan!</h3>
+                <a th:href="@{/}">Home</a>
+            </div>
+        </div>
+    </body>
 </html>
