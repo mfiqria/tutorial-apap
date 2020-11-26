@@ -8,8 +8,13 @@
     <body>
         <nav th:replace="fragments/fragment :: navbar"></nav>
         <div class="container-fluid">
-            <h3>Resep gagal dihapus karena memiliki obat</h3>
-            <a href="/resep/viewall">Kembali</a>
+            <div class="card">
+                <div class="card-header">Delete Resep Error</div>
+                <div class="card-body">
+                    <h3>Resep gagal dihapus karena memiliki obat</h3>
+                    <a href="/resep/viewall">Kembali</a>
+                </div>
+            </div>
         </div>
     </body>
 </html>

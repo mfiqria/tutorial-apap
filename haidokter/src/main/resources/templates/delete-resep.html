@@ -1,15 +1,20 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://thymeleaf.org">
-<head>
-    <title>Delete Resep</title>
-    <object th:include="fragments/fragment :: css" th:remove="tag"></object>
-    <object th:include="fragments/fragment :: js" th:remove="tag"></object>
-</head>
+    <head>
+        <title>Delete Resep</title>
+        <object th:include="fragments/fragment :: css" th:remove="tag"></object>
+        <object th:include="fragments/fragment :: js" th:remove="tag"></object>
+    </head>
 
-<body>
-<nav th:replace="fragments/fragment :: navbar"></nav>
-<h3
-        th:text="'Nomor Resep '+ ${resep.noResep} +' telah berhasil dihapus'"
-></h3>
-</body>
+    <body>
+        <nav th:replace="fragments/fragment :: navbar"></nav>
+        <div class="container-fluid">
+            <div class="card">
+                <div class="card-header">Delete Resep</div>
+                <div class="card-body">
+                    <h3 th:text="'Nomor Resep '+ ${resep.noResep} +' telah berhasil dihapus'"></h3>
+                </div>
+            </div>
+        </div>
+    </body>
 </html>
