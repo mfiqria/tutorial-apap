@@ -192,7 +192,7 @@ BindingResult adalah interface yang menyimpan hasil validasi dan binding. Bindin
 harus digunkaan setelah objek yang divalidasi atau Spring gagal untuk memvalidasi objek tersebut dan melakukan
 Throw suatu Exception 
 
-## Tutorial 5
+## Tutorial 6
 ### What I have learned today
 1. Jelaskan secara singkat perbedaan Otentikasi dan Otorisasi ! Di bagian mana (dalam kode yang telah anda
 buat) konsep tersebut diimplementasi?
