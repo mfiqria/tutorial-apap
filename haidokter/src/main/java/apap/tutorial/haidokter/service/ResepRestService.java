@@ -13,7 +13,7 @@ public interface ResepRestService {
 
     ResepModel getResepByNoResep(Long noResep);
 
-    ResepModel changeResep(Long noResep, ResepModel resep);
+    ResepModel changeResep(Long noResep, ResepModel resepUpdate);
 
     void deleteResep(Long noResep);
 

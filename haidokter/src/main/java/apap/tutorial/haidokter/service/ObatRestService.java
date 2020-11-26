@@ -16,6 +16,4 @@ public interface ObatRestService {
     ObatModel changeObat(Long id, ObatModel obat);
 
     void deleteObat(Long id);
-
-    Mono<String> getHospitalByState(String state);
 }

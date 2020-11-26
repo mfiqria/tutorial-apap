@@ -49,7 +49,7 @@ public class ObatController {
 
     @GetMapping("/obat/change/{idObat}")
     private String changeObatFormPage(@PathVariable Long idObat, Model model) {
-        Optional<ObatModel> existingObat = obatService.getObatById(idObat);
+        ObatModel existingObat = obatService.getObatById(idObat);
         model.addAttribute("obat", existingObat);
 
         return "form-update-obat";

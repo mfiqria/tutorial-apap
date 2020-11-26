@@ -22,8 +22,8 @@ public class ResepRestController {
     private ResepRestService resepRestService;
 
     @PostMapping(value = "/resep")
-    private ResepModel createResep(@Valid @RequestBody ResepModel resep, BindingResult bindingResult){
-        if (bindingResult.hasFieldErrors()){
+    private ResepModel createResep(@Valid @RequestBody ResepModel resep, BindingResult bindingResult) {
+        if (bindingResult.hasFieldErrors()) {
             throw new ResponseStatusException(
                     HttpStatus.BAD_REQUEST, "Request body has invalid type or missing field"
             );
@@ -38,7 +38,7 @@ public class ResepRestController {
         try {
             resepRestService.deleteResep(noResep);
             return ResponseEntity.ok("Resep with Number " + String.valueOf(noResep) + " deleted!");
-        } catch (NoSuchElementException e){
+        } catch (NoSuchElementException e) {
             throw new ResponseStatusException(
                     HttpStatus.NOT_FOUND, "Resep with Number " + String.valueOf(noResep) + " not found!"
             );
@@ -50,7 +50,7 @@ public class ResepRestController {
     }
 
     @GetMapping(value = "/resep/{noResep}")
-    private ResepModel retrieveResep(@PathVariable(value = "noResep") Long noResep){
+    private ResepModel retrieveResep(@PathVariable(value = "noResep") Long noResep) {
         try {
             return resepRestService.getResepByNoResep(noResep);
         } catch (NoSuchElementException e) {
@@ -61,7 +61,7 @@ public class ResepRestController {
     }
 
     @PutMapping(value = "/resep/{noResep}")
-    private ResepModel updateResep(@PathVariable(value = "noResep") Long noResep, @RequestBody ResepModel resep){
+    private ResepModel updateResep(@PathVariable(value = "noResep") Long noResep, @RequestBody ResepModel resep) {
         try {
             return resepRestService.changeResep(noResep, resep);
         } catch (NoSuchElementException e) {
@@ -72,16 +72,15 @@ public class ResepRestController {
     }
 
     @GetMapping(value = "/reseps")
-    private List<ResepModel> retrieveListResep() { return resepRestService.retrieveListResep();}
+    private List<ResepModel> retrieveListResep() { return resepRestService.retrieveListResep(); }
 
     @GetMapping(value = "/resep/{noResep}/status")
-    private Mono<String> getStatus(@PathVariable Long noResep){
+    private Mono<String> getStatus(@PathVariable Long noResep) {
         return resepRestService.getStatus(noResep);
     }
 
     @GetMapping(value = "/full")
-    private Mono<ResepDetail> postStatus(){
+    private Mono<ResepDetail> postStatus() {
         return resepRestService.postStatus();
     }
-
 }

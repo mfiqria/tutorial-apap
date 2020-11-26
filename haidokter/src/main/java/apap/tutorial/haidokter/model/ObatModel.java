@@ -12,7 +12,7 @@ import java.io.Serializable;
 
 @Entity
 @Table(name = "obat")
-@JsonIgnoreProperties(value={"resep"}, allowSetters = true)
+@JsonIgnoreProperties(value = {"resepModel"}, allowSetters = true)
 public class ObatModel implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

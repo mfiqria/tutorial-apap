@@ -1,6 +1,8 @@
 package apap.tutorial.haidokter.rest;
 
 public class Setting {
-    final public static String resepUrl = "https://d3365b0d-1ec0-457d-ac4b-bfbb234ec5ec.mock.pstmn.io";
+    final public static String resepUrl = "https://60dd6513-9bb1-4a3b-beed-150be462f07a.mock.pstmn.io";
 
+    /** LATIHAN **/
+    final public static String hospitalUrl = "http://www.communitybenefitinsight.org/api/get_hospitals.php";
 }

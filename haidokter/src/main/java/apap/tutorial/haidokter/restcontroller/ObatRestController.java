@@ -1,7 +1,7 @@
 package apap.tutorial.haidokter.restcontroller;
 
 import apap.tutorial.haidokter.model.ObatModel;
-//import apap.tutorial.haidokter.rest.ObatDetail;
+import apap.tutorial.haidokter.model.ResepModel;
 import apap.tutorial.haidokter.service.ObatRestService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -9,7 +9,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
-import reactor.core.publisher.Mono;
 
 import javax.validation.Valid;
 import java.util.List;
@@ -22,15 +21,15 @@ public class ObatRestController {
     private ObatRestService obatRestService;
 
     @PostMapping(value = "/obat")
-    private ResponseEntity<String> createObat(@Valid @RequestBody ObatModel obat, BindingResult bindingResult){
-        if (bindingResult.hasFieldErrors()){
+    private ResponseEntity<String> createObat(@Valid @RequestBody ObatModel obat, BindingResult bindingResult) {
+        if (bindingResult.hasFieldErrors()) {
             throw new ResponseStatusException(
                     HttpStatus.BAD_REQUEST, "Request body has invalid type or missing field"
             );
         }
         else {
             obatRestService.createObat(obat);
-            return ResponseEntity.ok("Add obat success!");
+            return ResponseEntity.ok("Add Obat success");
         }
     }
 
@@ -73,10 +72,4 @@ public class ObatRestController {
     private List<ObatModel> retrieveListObat() {
         return obatRestService.retrieveListObat();
     }
-
-    @GetMapping(value = "/hospitals/find")
-    private Mono<String> getHospitalByState(@RequestParam(value = "state") String state){
-        return obatRestService.getHospitalByState(state);
-    }
-
 }

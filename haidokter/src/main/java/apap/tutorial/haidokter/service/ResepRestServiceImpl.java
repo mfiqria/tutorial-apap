@@ -26,7 +26,7 @@ public class ResepRestServiceImpl implements ResepRestService {
     private ResepDb resepDb;
 
     @Override
-    public ResepModel createResep(ResepModel resep){
+    public ResepModel createResep(ResepModel resep) {
         return resepDb.save(resep);
     }
 
@@ -36,15 +36,15 @@ public class ResepRestServiceImpl implements ResepRestService {
     }
 
     @Override
-    public ResepModel getResepByNoResep(Long noResep){
+    public ResepModel getResepByNoResep(Long noResep) {
         Optional<ResepModel> resep = resepDb.findByNoResep(noResep);
-        if (resep.isPresent()){
+        if (resep.isPresent()) {
             return resep.get();
-        }
-        else {
+        } else {
             throw new NoSuchElementException();
         }
     }
+
 
     @Override
     public ResepModel changeResep(Long noResep, ResepModel resepUpdate) {
@@ -56,12 +56,11 @@ public class ResepRestServiceImpl implements ResepRestService {
     }
 
     @Override
-    public void deleteResep(Long noResep){
+    public void deleteResep(Long noResep) {
         ResepModel resep = getResepByNoResep(noResep);
-        if (resep.getListObat().size() == 0){
+        if (resep.getListObat().size() == 0) {
             resepDb.delete(resep);
-        }
-        else {
+        } else {
             throw new UnsupportedOperationException();
         }
     }
@@ -71,14 +70,15 @@ public class ResepRestServiceImpl implements ResepRestService {
     }
 
     @Override
-    public Mono<String> getStatus(Long noResep){
-        return this.webClient.get().uri("/rest/resep/" +noResep+ "/status").retrieve().bodyToMono(String.class);
+    public Mono<String> getStatus(Long noResep) {
+        return this.webClient.get().uri("/rest/resep/"+noResep+"/status").retrieve().bodyToMono(String.class);
     }
-    
+
+
     @Override
     public Mono<ResepDetail> postStatus() {
         MultiValueMap<String, String> data = new LinkedMultiValueMap<>();
-        data.add("namaDokter", "Dr.APAP");
+        data.add("namaDokter", "Dr. APAP");
         data.add("namaPasien", "Dede APAP");
         return this.webClient.post().uri("/rest/resep/full")
                 .syncBody(data)
@@ -86,3 +86,4 @@ public class ResepRestServiceImpl implements ResepRestService {
                 .bodyToMono(ResepDetail.class);
     }
 }
+
