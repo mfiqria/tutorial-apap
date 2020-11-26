@@ -154,3 +154,41 @@ Judul title dapat kita sesuaikan dengan title terkait
 
 ### What I did not understand
 - Saya masih harus banyak belajar mengenai flexible layout dan juga hal hal terkait latihan no 4
+
+
+## Tutorial 5
+### What I have learned today
+1. Apa itu Postman? Apa kegunaannya?
+Postman adalah sebuah collaboration platform untuk API Develpoment. Melalui Postman programmer bisa create, share, test
+dan mendokumentasikan API yang mereka miliki. Beberapa hal yang bisa dilakukan oleh Postman adalah :
+- API Client
+- Automated Testing
+- Design & Mock
+- Documentation
+- Monitors
+- Workspace
+
+2. Jelaskan fungsi dari anotasi @JsonIgnoreProperties dan @JsonProperty.
+@JsonIgnorProperties digunakan pada Class untuk meng-ignore kolom selama serialization dan deserialization.
+Properti yang memiliki anotasi ini tidak akan dipetakan ke konten JSON.
+@JsonProperty digunakan untuk menandai metode getter/setter yang akan digunakan dengan properti JSON
+
+3. Apa kegunaan attribut WebClient?
+Webclient adalah interface yang bekerja dengan client. WebClient bisa melakukan hal berikut :
+- Create an instance
+- make a request
+- handle the response
+Pada tutorial kali ini kita menggunakan webClient pada ResepRestServiceImpl dan ObatRestServiceImpl untuk mengambil API.
+
+4. Apa itu ResponseEntity dan BindingResult? Apa kegunaannya?
+ResponseEntity digunakan untk mewakili seluruh respons HTTP, mulai dari Status Code, headers, dan body nya.
+Kita bisa melakukan konfigurasi terkait HTTP melalui ResponseEntity ini. Untuk menggunakannya kita perlu melakukan return diakhir.
+Pada tutorial ini kita menggunakan beberap ResponseEntity, seperti :
+- HttpStatusnya Bad Request
+- HttpStatusnya OK
+- HttpStatusnya Not found
+
+BindingResult adalah interface yang menyimpan hasil validasi dan binding. BindingResult
+harus digunkaan setelah objek yang divalidasi atau Spring gagal untuk memvalidasi objek tersebut dan melakukan
+Throw suatu Exception 
+
