@@ -5,6 +5,7 @@ import apap.tutorial.haidokter.model.ResepModel;
 import apap.tutorial.haidokter.model.UserModel;
 import apap.tutorial.haidokter.repository.UserDb;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.JdbcOperations;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -40,4 +41,14 @@ public class UserServiceImpl implements UserService{
 
         return user;
     }
+
+//    @Override
+//    public String checkUsername(String username){
+//        if (userDb.findByUsername(username).getUsername() != null){
+//            return userDb.findByUsername(username).getUsername();
+//        }
+//        else {
+//            return "tidak ada";
+//        }
+//    }
 }

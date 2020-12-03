@@ -8,4 +8,5 @@ public interface UserService {
     UserModel getUserByUsername(String username);
     UserModel changePassword(UserModel user, String password);
     public String encrypt(String password);
+//    String checkUsername(String username);
 }
