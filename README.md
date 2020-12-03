@@ -229,7 +229,7 @@ Nomor 1 → Saya menambahkan if-else condition pada file Item/index.js
 If-else tersebut berguna untuk menampilkan checkbox, jika item tersebut telah terceklis, maka js akan menampilkan
 item dengan checkbox yang terceklis, namun jika tidka maka tidak akan menampilkan input checkbox
 
-Nomor 2 → Saya membuat function handleDeleteItem yang
+Nomor 2 → Saya membuat function handleItemDelete yang
 ![alt text](https://github.com/mfiqria/tutorial-apap/blob/feat/tutorial-7-frontend/2.png?raw=true)
 ![alt text](https://github.com/mfiqria/tutorial-apap/blob/feat/tutorial-7-frontend/2b.png?raw=true)
 
