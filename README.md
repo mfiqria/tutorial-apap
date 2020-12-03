@@ -216,3 +216,59 @@ karena terdiri dari 32 hexadecimal character
 memiliki class UserRoleServiceImpl.java ?
 UserDetailServiceImpl.java berguna untuk otentikasi user. Class ini akan meng-extend UserDetailsService dari
 Spring Security
+
+
+## Tutorial 7
+### What I have learned today
+1. Jelaskan apa yang Anda lakukan di latihan dalam satu paragraf per-soal. Berikan screenshot sebagai ilustrasi
+dari apa yang Anda jelaskan.
+Nomor 1 → Saya menambahkan if-else condition pada file Item/index.js.
+[foto]
+If-else tersebut berguna untuk menampilkan checkbox, jika item tersebut telah terceklis, maka js akan menampilkan
+item dengan checkbox yang terceklis, namun jika tidka maka tidak akan menampilkan input checkbox
+
+Nomor 2 →
+
+Nomor 3 → Saya mengubah fungsi handleItemClick menjadi handleItemClickKiri dan handleItemClickKanan, dengan kode berikut
+[foto 2a] [foto2b]
+pada List Movies saya menggunakan fungsi handleItemClickKiri, saya hanya menggunakan satu if, yaitu jika diklik maka akan menambahkan ke daftar favorit list
+pada My Favorites saya menggunakan fungsi handleItemClickKanan, saya menggunakan codingan yang sama dengan codingan handleItemClick awal, karena ketika sudah 
+diklik sekali, maka ketika diklik lagi, item tersebut akan di splice/delete dari list.
+
+Nomor 4 → Saya membuat fungsi handleTampilkanFavorite, yang berperan sebagai toggle.
+[foto 4] [foto4b] [4b]
+Disini saya juga menggunakan if-else condition, dimana jika toggle off, maka favorite tidak akan ditampilkan.,
+jika toggle on, maka favorite akan ditampilkan. Dengan menggunakan state.tampilkan sebagai variabelnya.
+
+Nomor 5 → Saya membuat file component baru bernama EmptyState yang akan menghandle jika list favorite kosong.
+Component ini akan di import di app.js
+[foto 5]
+Penggunaannya juga berdekatan dengan toggle favorite. Jika toggle on, namun tidak ada list favorite, maka component akan
+ditampilkan
+
+2. Menurut pemahaman kamu selama pengerjaan tutorial ini, apa perbedaan antara state dan props ?
+Setelah googling, saya mengetahui bahwa props adalah sejenis parameter dalam function, bisa juga
+sebagai property dari suatu class. Props adalah variabel yang read-only dan hanya digunakan untuk
+komunikasi data component induknya. Sedangkan state adalah juga data dari component dan tidak dapat diakses
+oleh component lain. Dalam kegunaannya props untuk komunikasi antar component sedangkan state untuk
+komunikasi data internal (hanya component tersebut)
+
+3. Apa keuntungan menggunakan component (e.g. List, Item) di React? Berikan contohnya!
+Dengan menggunakan component, developer akan dimudahkan dalam membagi UI menjadi bagian bagian tersendiri. Component bisa
+dianggap seperti function, karena dapat dioper satu sama lain untuk digunakan di tempat lain
+Contohnya pada file list.js, disini kita melakukan import dari component Item, selain itu
+pada App.js kita melakukan import 2 component yaitu list.js dari List dan EmptyState.js
+
+
+4. Menurut kamu, apa saja kelebihan menggunakan React dalam pengembangan web?
+Menurut saya, kelebihan dari React adalah :
+- React tergolong lebih ringan untuk diproses, flexible, dan mudah di integrasikan
+- SEO-friendly
+- Easy for testing and debugging
+- Proses rendering react cukup cepat.
+
+5. Menurut kamu, apa saja kekurangan menggunakan React dalam pengembangan web?
+Menurut saya, kekurangan dari React adalah :
+- Susah dipelajari, memerlukan banyak latihan dan pengetahuan yang dalam menggunakannya sesuai konsep MVC
+- Berfokus kepada tampilan saja, yang mana bertentangan dengan prinsip MVC
+- Dokumentasi yang sulit dipahami bagi orang awam
