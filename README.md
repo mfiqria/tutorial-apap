@@ -222,21 +222,26 @@ Spring Security
 ### What I have learned today
 1. Jelaskan apa yang Anda lakukan di latihan dalam satu paragraf per-soal. Berikan screenshot sebagai ilustrasi
 dari apa yang Anda jelaskan.
-Nomor 1 → Saya menambahkan if-else condition pada file Item/index.js.
+Nomor 1 → Saya menambahkan if-else condition pada file Item/index.js
+
 ![alt text](https://github.com/mfiqria/tutorial-apap/blob/feat/tutorial-7-frontend/1.png?raw=true)
+
 If-else tersebut berguna untuk menampilkan checkbox, jika item tersebut telah terceklis, maka js akan menampilkan
 item dengan checkbox yang terceklis, namun jika tidka maka tidak akan menampilkan input checkbox
 
 Nomor 2 →
 
 Nomor 3 → Saya mengubah fungsi handleItemClick menjadi handleItemClickKiri dan handleItemClickKanan, dengan kode berikut
-![alt text](https://github.com/mfiqria/tutorial-apap/blob/feat/tutorial-7-frontend/3a.png?raw=true) ![alt text](https://github.com/mfiqria/tutorial-apap/blob/feat/tutorial-7-frontend/3b.png?raw=true)
+![alt text](https://github.com/mfiqria/tutorial-apap/blob/feat/tutorial-7-frontend/3a.png?raw=true) 
+![alt text](https://github.com/mfiqria/tutorial-apap/blob/feat/tutorial-7-frontend/3b.png?raw=true)
 pada List Movies saya menggunakan fungsi handleItemClickKiri, saya hanya menggunakan satu if, yaitu jika diklik maka akan menambahkan ke daftar favorit list
 pada My Favorites saya menggunakan fungsi handleItemClickKanan, saya menggunakan codingan yang sama dengan codingan handleItemClick awal, karena ketika sudah 
 diklik sekali, maka ketika diklik lagi, item tersebut akan di splice/delete dari list.
 
 Nomor 4 → Saya membuat fungsi handleTampilkanFavorite, yang berperan sebagai toggle.
-![alt text](https://github.com/mfiqria/tutorial-apap/blob/feat/tutorial-7-frontend/4.png?raw=true) ![alt text](https://github.com/mfiqria/tutorial-apap/blob/feat/tutorial-7-frontend/4b.png?raw=true) ![alt text](https://github.com/mfiqria/tutorial-apap/blob/feat/tutorial-7-frontend/4c.png?raw=true)
+![alt text](https://github.com/mfiqria/tutorial-apap/blob/feat/tutorial-7-frontend/4.png?raw=true) 
+![alt text](https://github.com/mfiqria/tutorial-apap/blob/feat/tutorial-7-frontend/4b.png?raw=true) 
+![alt text](https://github.com/mfiqria/tutorial-apap/blob/feat/tutorial-7-frontend/4c.png?raw=true)
 Disini saya juga menggunakan if-else condition, dimana jika toggle off, maka favorite tidak akan ditampilkan.,
 jika toggle on, maka favorite akan ditampilkan. Dengan menggunakan state.tampilkan sebagai variabelnya.
 
