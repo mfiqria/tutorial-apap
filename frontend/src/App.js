@@ -27,10 +27,9 @@ export default class App extends React.Component{
 
     handleItemDelete = () => {
         const newItems = [ ... this.state.favItems];
-        while (newItems.length > 0){
-            newItems.pop();
-        }
-    }
+        newItems.splice(0, newItems.length);
+        this.setState({favItems: newItems});
+    };
 
     handleItemClickKanan = (item) => {
         // immutability
@@ -80,15 +79,16 @@ export default class App extends React.Component{
 
                     {!this.state.tampilkan ? null
                     : <div className="col-sm">
+                            <button
+                                className="btn btn-danger float-right"
+                                onClick={this.handleItemDelete}/><br/>
                             {!this.state.favItems.length ? <EmptyState/> :
                                 <List
                                     title="My Favorites"
                                     items={favItems}
                                     onItemClick={this.handleItemClickKanan}
                                 />
-
                             }
-                            <button onClick={this.handleItemDelete}/>
                         </div>}
                 </div>
             </div>
