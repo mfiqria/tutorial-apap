@@ -2,7 +2,6 @@ package apap.tutorial.haidokter.controller;
 
 import apap.tutorial.haidokter.model.ObatModel;
 import apap.tutorial.haidokter.model.ResepModel;
-import apap.tutorial.haidokter.service.ObatService;
 import apap.tutorial.haidokter.service.ResepService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -18,10 +17,6 @@ public class ResepController {
     @Autowired
     private ResepService resepService;
 
-    @GetMapping("/")
-    private String home() {
-        return "home";
-    }
 
     @GetMapping("/resep/add")
     public String addResepFormPage(Model model) {

@@ -192,3 +192,27 @@ BindingResult adalah interface yang menyimpan hasil validasi dan binding. Bindin
 harus digunkaan setelah objek yang divalidasi atau Spring gagal untuk memvalidasi objek tersebut dan melakukan
 Throw suatu Exception 
 
+## Tutorial 6
+### What I have learned today
+1. Jelaskan secara singkat perbedaan Otentikasi dan Otorisasi ! Di bagian mana (dalam kode yang telah anda
+buat) konsep tersebut diimplementasi?
+ - Otentikasi → Proses untuk memastikan bahwa suatu user itu sudah terdaftar atau belum didalam sistem. Implementasinya pada 
+ Tutorial ini adalah pada bagian Login, jika user dan password tersebut ada didalam database, maka user tersebut sudah terotentikasi. 
+ Jika tidak maka user tersebut belum terotentikasi
+ - Otorisasi → Proses untuk memastikan bahwa suatu user berhak atau memiliki akses terhadap suatu resource pada sistem.
+ Implementasinya ada pada proses addUser ataupun addObat, yang hanya beberapa jenis user (role) yang dapat mengakses fitur tersebut
+ Untuk mengatur siapa saja yang terotorisasi, bisa di lakukan pada class WebSecurityConfig
+ 
+2. Apa itu BCryptPasswordEncoder ? Jelaskan secara singkat cara kerjanya!
+BCryptPasswordEncoder → class yang bisa diimport untuk melakukan encode terhadap suatu password.
+Cara kerjanya adalah dengan memanggil class nya, lalu tinggal lakukan encode terhadap password yang kita inginkan.
+
+3. Jelaskan secara singkat apa itu UUID beserta penggunaannya!
+UUID → Identifier unik untuk setiap data. Biasanya direpresentasikan dengan 32 hexadecimal character.
+Penggunaannya ada pada UserModel.java untuk membuat ID, sehingga akan terjamin setiap id yang dibuat unik dan terjamin aman
+karena terdiri dari 32 hexadecimal character
+
+4. Apa kegunaan class UserDetailsServiceImpl.java ? Mengapa harus ada class tersebut padahal kita sudah
+memiliki class UserRoleServiceImpl.java ?
+UserDetailServiceImpl.java berguna untuk otentikasi user. Class ini akan meng-extend UserDetailsService dari
+Spring Security
