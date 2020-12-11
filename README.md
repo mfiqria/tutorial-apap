@@ -282,3 +282,51 @@ Menurut saya, kekurangan dari React adalah :
 - Susah dipelajari, memerlukan banyak latihan dan pengetahuan yang dalam menggunakannya sesuai konsep MVC
 - Berfokus kepada tampilan saja, yang mana bertentangan dengan prinsip MVC
 - Dokumentasi yang sulit dipahami bagi orang awam
+
+
+## Tutorial 8
+### What I have learned today
+1. Ceritakan langkah - langkah yang kalian lakukan untuk solve LATIHAN no.1, dan mengapa kalian
+melakukan langkah - langkah tersebut?
+Hal yang saya lakukan adalah menambah kan beberapa baris code pada handleAddResep.
+Yaitu menambahkan setState pada namaDokter, namaPasien, dan catatan menjadi string kosong.
+Jadi ketika user meng-click tombol Add Resep, maka state tersebut akan bernilai String kosong, sehingga
+form hanya akan menampilkan placeholder pada setiap input.
+
+2. Jelaskan fungsi dari async dan await !
+Asycn dan Await adalah fitur yang mempermudah developer dalam menghandle fungsi yang berproses secara asynchronous
+Secara simple nya async berguna untuk mengubah fungsi menjadi asynchronous
+sedangkan await berguna untuk menunda eksekusi hingga proses asynchhronous selesai dijalankan
+
+3. Masukkan jawaban dari Screenshot yang diperintahkan di halaman 8 pada Component Lifecycle
+pada pertanyaan ini.
+Step 2 (npm start)
+![alt text](https://github.com/mfiqria/tutorial-apap/blob/feat/tutorial-8-frontend/P3-1.png?raw=true)
+
+Step 3 (inspect element tab console)
+![alt text](https://github.com/mfiqria/tutorial-apap/blob/feat/tutorial-8-frontend/P3-2.png?raw=true)
+
+Step 6 (isLoading)
+![alt text](https://github.com/mfiqria/tutorial-apap/blob/feat/tutorial-8-frontend/P3-3.png?raw=true)
+
+Step 7 (button handleClickLoading)
+![alt text](https://github.com/mfiqria/tutorial-apap/blob/feat/tutorial-8-frontend/P3-4.png?raw=true)
+
+Step 8 dan 9 (return true dan Click Change State)
+![alt text](https://github.com/mfiqria/tutorial-apap/blob/feat/tutorial-8-frontend/P3-5.png?raw=true)
+
+![alt text](https://github.com/mfiqria/tutorial-apap/blob/feat/tutorial-8-frontend/P3-6.png?raw=true)
+
+4. Jelaskan fungsi dari componentDidMount, shouldComponentUpdate,
+componentDidUpdate, componentWillReceiveProps,
+componentWillUnmount.
+Notes : Penjelasan harus mencantumkan “kapan fungsi dipanggil” dan “ use case apa saja
+yang biasanya menggunakan lifecycle method tersebut”.
+Fungsi diatas adalah salah satu lifecycles method yang ada. (Mounting, Updating, dan Unmounting)
+
+componentDidMount → dipanggil ketika component telah selesai melakukan proses mounting (baik itu create maupun inserted)
+shouldComponentUpdate → dipanggil ketika props atau state dari component telah berubah
+componentDidUpdate → dipanggil ketika proses render diulang, seperti melakukan edit data
+componentWillReceiveProps → dipanggil ketika component telah menerima props dari nilai yang berubah
+componentWillUnmount → dipanggil ketika melakukan clean-up
+
